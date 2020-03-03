@@ -24,7 +24,7 @@ function drawStar(ctx, loc_x, loc_y) {
     ctx.arc(loc_x, loc_y, radius, 0, 2 * Math.PI, false);
 }
 
-var starCount = 150; // Amount of stars to be drawn
+var starCount = 200; // Amount of stars to be drawn
 var star_locations = new Array(starCount); // Store the coordinates pairs as an array of (x,y)
 var initialSize = new Array(2); // Store the initial screen size the coordinates were created from [(x,y)]
 
