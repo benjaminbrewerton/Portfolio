@@ -1,3 +1,12 @@
 body {
   background-color: #000000;
 }
+
+/*
+  Initialise the canvas positioning
+*/
+#background-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
