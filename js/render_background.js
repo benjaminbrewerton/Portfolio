@@ -9,8 +9,10 @@ function initCanvas() {
   canvas.context = canvas.node.getContext('2d');
   canvas.node.width = getDocumentWidth();
   canvas.node.height = getDocumentHeight();
-  canvas.id = "background-canvas"
-  parent.appendChild(document.getElementsByTagName("BODY")[0]); // append to body
+  canvas.id = "background-canvas";
+
+  // append canvas to body
+  document.body.appendChild(canvas.node);
 
   // return the canvas element
   return canvas;
@@ -26,22 +28,24 @@ function drawStar(ctx, loc_x, loc_y) {
 function renderStars() {
   var canv = initCanvas();
 
-  if(canv.getContext) {
-    var cont = canvas.getContext('2d');
+  // check if the canvas is not null
+  if(canv.context) {
+
+    var cont = canv.context;
     var starCount = 150; // Amount of stars to be drawn
 
-    for(var i = 0; i++; i < starCount) {
+    for(var i = 0; i < starCount; i++) {
       cont.beginPath(); // Begin drawing
-
       // Get the location for the stars
       var star_x = getRandBetween(radius/2, getDocumentWidth());
       var star_y = getRandBetween(radius/2, getDocumentHeight());
-    }
-    // Actually draw the star
-    drawStar(cont, star_x, star_y);
 
-    // Set the fill colour to white and fill the circle
-    ctx.fillStyle = "white";
-    ctx.fill();
+      // Actually draw the star
+      drawStar(cont, star_x, star_y);
+
+      // Set the fill colour to white and fill the circle
+      cont.fillStyle = "white";
+      cont.fill();
+    }
   }
 }

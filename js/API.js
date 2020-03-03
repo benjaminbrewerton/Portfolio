@@ -1,26 +1,44 @@
 // Function that returns an integer random between a Minimum and Maximum
 function getRandBetween(min, max) {
-  return Math.floor((Math.random() * max) + 1);
+  return Math.floor((Math.random() * max) + 1) + min;
 }
 
 // Function that returns the document's total width
 function getDocumentWidth() {
-  return Math.max(
-      document.documentElement["clientWidth"] != null ? document.documentElement["clientWidth"] : 0,
-      document.body["scrollWidth"] != null ? document.documentElement["scrollWidth"] : 0,
-      document.documentElement["scrollWidth"] != null ? document.documentElement["scrollWidth"] : 0,
-      document.body["offsetWidth"] != null ? document.documentElement["offsetWidth"] : 0,
-      document.documentElement["offsetWidth"] != null ? document.documentElement["offsetWidth"] : 0
+    var scrollWidth = 0;
+    var offsetWidth = 0;
+
+    // Check if body element is null
+    if(document.body) {
+        scrollWidth = document.body["scrollWidth"];
+        offsetWidth = document.body["offsetWidth"];
+    }
+
+    return Math.max(
+      document.documentElement["clientWidth"],
+      scrollWidth,
+      document.documentElement["scrollWidth"],
+      offsetWidth,
+      document.documentElement["offsetWidth"]
     );
 }
 
 // Function that returns the document's total height
 function getDocumentHeight() {
-  return Math.max(
+    var scrollHeight = 0;
+    var offsetHeight = 0;
+
+    // Check if body element is null
+    if(document.body) {
+        scrollHeight = document.body["scrollHeight"];
+        offsetHeight = document.body["offsetHeight"];
+    }
+
+    return Math.max(
       document.documentElement["clientHeight"],
-      document.body["scrollHeight"],
+      scrollHeight,
       document.documentElement["scrollHeight"],
-      document.body["offsetHeight"],
+      offsetHeight,
       document.documentElement["offsetHeight"]
     );
 }

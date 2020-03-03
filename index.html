@@ -13,11 +13,13 @@
   <!-- CSS STYLESHEETS -->
   <link rel="stylesheet" href="css/main.css">
 
-  <!-- JAVASCRIPTS -->
+  <!-- JAVASCRIPT -->
   <script src="js/API.js"></script>
   <script src="js/render_background.js"></script>
   <script type="text/javascript">
-    renderStars();
+    window.onload = function doBackground() {
+      renderStars();
+    }
   </script>
 
 </head>
