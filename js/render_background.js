@@ -9,7 +9,7 @@ function initCanvas() {
   canvas.context = canvas.node.getContext('2d');
   canvas.node.width = getDocumentWidth();
   canvas.node.height = getDocumentHeight();
-  canvas.id = "background-canvas";
+  canvas.node.id = "background-canvas";
 
   // append canvas to body
   document.body.appendChild(canvas.node);
@@ -49,3 +49,17 @@ function renderStars() {
     }
   }
 }
+
+// Function for handling the background resizing
+function resizeCanvasBackground() {
+    var canv = document.getElementById('background-canvas');
+
+    var oldcanv = canvas.toDataURL('image/png');
+
+    canv.width = getDocumentWidth();
+    canv.height = getDocumentHeight();
+
+    canv.drawImage(oldcanv);
+}
+
+window.addEventListener('resize', resizeCanvasBackground);
