@@ -1,6 +1,6 @@
-// Function that returns an integer random between a Minimum and Maximum
+// Function that returns an integer random between a Minimum and Maximum (Inclusive)
 function getRandBetween(min, max) {
-  return Math.floor((Math.random() * max) + 1) + min;
+  return Math.floor((Math.random() * (max + 1 - min))) + min;
 }
 
 // Function that returns the document's total width
