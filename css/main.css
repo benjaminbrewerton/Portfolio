@@ -9,12 +9,19 @@ body {
 /*
   Initialise the canvas positioning
 */
-#background-canvas {
+.background-canvas {
   position: absolute;
+}
+
+#star-canvas {
+  margin: 0;
   top: 0;
   left: 0;
-  margin: 0;
 
   width: 100%;
   height: 100%;
+}
+
+#sun-canvas {
+  
 }

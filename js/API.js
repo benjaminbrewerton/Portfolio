@@ -42,3 +42,9 @@ function getDocumentHeight() {
       document.documentElement["offsetHeight"]
     );
 }
+
+// Function to execute all load sequences
+function load() {
+    renderStars();
+    renderSun();
+}

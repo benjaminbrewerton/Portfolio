@@ -1,7 +1,7 @@
 var radius = 2; // Static variable for the radius of a star
 
 // Function to initialise the background canvas
-function initCanvas() {
+function initBackgroundCanvas(canv_id) {
     var canvas = {};
 
     // initialise the canvas parameters
@@ -9,7 +9,8 @@ function initCanvas() {
     canvas.context = canvas.node.getContext('2d');
     canvas.node.width = getDocumentWidth();
     canvas.node.height = getDocumentHeight();
-    canvas.node.id = "background-canvas";
+    canvas.node.className = "background-canvas";
+    canvas.node.id = canv_id;
 
     // append canvas to body
     document.body.appendChild(canvas.node);
@@ -48,12 +49,12 @@ function createLocations() {
 
 // Function to render the stars onto the background a specified number of times
 function renderStars() {
-    var canv = document.getElementById('background-canvas');
+    var canv = document.getElementById('star-canvas');
 
     // check if the canvas exists
     if(!canv) {
         // Initialise the document background
-        canv = initCanvas();
+        canv = initBackgroundCanvas("star-canvas");
         createLocations();
     }
 
@@ -79,4 +80,5 @@ function renderStars() {
     }
 }
 
+// check for a window resize
 window.addEventListener('resize', renderStars);
