@@ -13,6 +13,7 @@ function initSunCanvas(canv_id) {
     canvas.node.className = "background-canvas";
     canvas.node.id = canv_id;
     canvas.node.style.marginLeft = (document.body.clientWidth - square).toString() + "px"; // set the margin to align to the right
+    canvas.node.style.marginTop = (0).toString() + "px";
 
     // append canvas to body
     document.body.appendChild(canvas.node);
@@ -37,8 +38,6 @@ function renderSun() {
         canv = initSunCanvas("sun-canvas");
     } else {
         var square = document.body.clientWidth * sun_percent_width; // The sides of the canvas should be this width [square]
-
-        console.log(square);
 
         canv.style.marginLeft = (document.body.clientWidth*(1 - sun_percent_width)).toString() + "px"; // set the margin to align to the right
         canv.width = square;

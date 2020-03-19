@@ -78,6 +78,7 @@ function renderStars() {
             cont.fill();
         }
     }
+
 }
 
 // check for a window resize

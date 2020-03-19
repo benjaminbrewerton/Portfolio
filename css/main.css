@@ -1,27 +1,50 @@
 body {
   background-color: #000000;
   margin: 0;
+  padding: 0;
 
   width: 100%;
   height: 100%;
+}
+
+body * {
+  margin: 0;
+  padding: 0;
 }
 
 /*
   Initialise the canvas positioning
 */
 .background-canvas {
-  position: absolute;
+  position: fixed;
 }
 
-#star-canvas {
+#star-canvas, #sun-canvas {
   margin: 0;
   top: 0;
   left: 0;
 
-  width: 100%;
-  height: 100%;
+  z-index: -50;
 }
 
-#sun-canvas {
-  
+/*
+  Styles for the intro section
+*/
+div.container_intro {
+  background-color: rgba(102, 96, 96, 0.6);
+
+  margin: 10% 20% 0 20%;
+
+  width: 60%;
+  height: 50%;
 }
+
+#container_content p {
+  color: white;
+  padding: 5% 5% 5% 5%;
+
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 72pt;
+}
+
