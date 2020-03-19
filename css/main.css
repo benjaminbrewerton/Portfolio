@@ -19,6 +19,11 @@ body * {
   position: fixed;
 }
 
+/* #star-canvas {
+  width: 100%;
+  height: 100%;
+} */
+
 #star-canvas, #sun-canvas {
   margin: 0;
   top: 0;

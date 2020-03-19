@@ -58,25 +58,28 @@ function renderStars() {
         createLocations();
     }
 
+    var cont = canv.context;
+
+
+
     // check if the canvas is not null
-    if (canv.context) {
+    if(!cont) {
+        cont = canv.getContext('2d');
+    }
 
-        var cont = canv.context; // get the context to draw on
+    for (var i = 0; i < star_locations.length; i++) {
+        cont.beginPath(); // Begin drawing
 
-        for (var i = 0; i < star_locations.length; i++) {
-            cont.beginPath(); // Begin drawing
+        // Scale the star locations
+        var star_x = star_locations[i][0] * (getDocumentWidth() / initialSize[0]);
+        var star_y = star_locations[i][1] * (getDocumentHeight() / initialSize[1]);
 
-            // Scale the star locations
-            var star_x = star_locations[i][0] * (getDocumentWidth() / initialSize[0]);
-            var star_y = star_locations[i][1] * (getDocumentHeight() / initialSize[1]);
+        // Actually draw the star
+        drawStar(cont, star_locations[i][0], star_locations[i][1]);
 
-            // Actually draw the star
-            drawStar(cont, star_locations[i][0], star_locations[i][1]);
-
-            // Set the fill colour to white and fill the circle
-            cont.fillStyle = "white";
-            cont.fill();
-        }
+        // Set the fill colour to white and fill the circle
+        cont.fillStyle = "white";
+        cont.fill();
     }
 
 }
